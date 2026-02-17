@@ -5,12 +5,12 @@ Module Program
 		Dim nDecNum = 0
 		Dim nBinPower = 1
 		Dim nMaxBinaryLen = Math.Truncate(Math.Log2(UInteger.MaxValue))
-		Dim oRegEx = New Regex("[0-1]")
+		Dim oRegEx = New Regex("^[0-1]+$")
 		Console.WriteLine("Input a binary number")
 		Dim strLine = Console.ReadLine()
 		Dim nStrLen = strLine.Length
-		Dim nMatches = oRegEx.Count(strLine)
-		Dim bRightString = (nStrLen <= nMaxBinaryLen) AndAlso (nStrLen = nMatches)
+		Dim bIsMatch = oRegEx.IsMatch(strLine)
+		Dim bRightString = (nStrLen <= nMaxBinaryLen) AndAlso bIsMatch
 		If Not bRightString Then
 			Console.WriteLine("Wrong binary number format!!!")
 			Console.Read()
