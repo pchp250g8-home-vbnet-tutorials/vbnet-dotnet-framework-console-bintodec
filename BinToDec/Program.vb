@@ -3,9 +3,9 @@ Imports System.Text.RegularExpressions
 Module Program
 	Sub Main(args As String())
 		Const MAX_INT = UInteger.MaxValue
-		Dim nDecNum = 0
-		Dim nBinPower = 1
-		Dim nMaxBinaryLen = Math.Ceiling(Math.Log2(MAX_INT))
+		Dim nDecNum = 0L
+		Dim nBinPower = 1L
+		Dim nMaxBinaryLen = Math.Ceiling(Math.Log(MAX_INT, 2))
 		Dim oRegEx = New Regex("^[0-1]+$")
 		Console.WriteLine("Input a binary number")
 		Dim strLine = Console.ReadLine()
