@@ -5,7 +5,7 @@ Module Program
 		Const MAX_INT = UInteger.MaxValue
 		Dim nDecNum = 0
 		Dim nBinPower = 1
-		Dim nMaxBinaryLen = Math.Truncate(Math.Log2(MAX_INT))
+		Dim nMaxBinaryLen = Math.Ceiling(Math.Log2(MAX_INT))
 		Dim oRegEx = New Regex("^[0-1]+$")
 		Console.WriteLine("Input a binary number")
 		Dim strLine = Console.ReadLine()
@@ -22,7 +22,7 @@ Module Program
 			nDecNum += (nBinDight * nBinPower)
 			nBinPower *= 2
 		Next i
-		Console.WriteLine("The decenary equivalent of the binary number {0} is {1}", strLine, nDecNum)
+		Console.WriteLine("The decimal equivalent of the binary number {0} is {1}", strLine, nDecNum)
 		Console.Read()
 	End Sub
 End Module
